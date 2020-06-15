@@ -1,0 +1,309 @@
+\documentclass[letterpaper, 12pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{Experiment on Measuring Reaction Rates}
+\author{Eamon Ma}
+\date{2020-06-14}
+
+\usepackage[sectionbib]{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage[margin=2cm]{geometry}
+
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+
+\usepackage{lmodern}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.7}
+\noindent{2020-06-14}
+\hfill
+Eamon Ma
+
+\begin{center}
+    \LARGE{Forces review}
+\end{center}
+
+\section*{Simple problems}
+\begin{enumerate}
+    \item A cow is pushed simultaneously by two strong, independent persons of equal strength on opposing sides, at equal force. What is the net force on the cow?
+    \begin{enumerate}
+        \item Add the forces.
+        \begin{align}
+            \text{let F be the force of one person.} \\
+            F_{\text{net}} &= F + (-F)  && \text{Substitute.} \\
+            F_{\text{net}} &= \SI{0}{N} && \text{Evaluate.} 
+        \end{align}
+        \hfill
+        \\
+        The net force exerted on the truck is \SI{0}{N}.
+        \\   
+    \end{enumerate}
+    \item A vector of magnitude 5 and direction of \SI{0}{\degree} is added to a vector of magnitude 10 and direction of \SI{0}{\degree}. What is the resulting vector?
+    \begin{enumerate}
+        \item Add the vectors.
+        \begin{align}
+            \vec{V} &= 5 + 10 && \text{Add the magnitudes.}
+        \end{align}
+        \\
+        The net vector is 15, \SI{0}{\degree}.
+        \\
+    \end{enumerate}
+    \item A vector of magnitude 3 and direction of \SI{90}{\degree} is added to a vector of magnitude 4 and direction of \SI{0}{\degree}. What is the resulting vector?
+    \begin{enumerate}
+        \item Find the magnitude of the resulting vector.
+        \begin{align}
+            \vec{V}^2 &= 3^2 + 4^2 && \text{Use the Pythagorean theorem and substitute.} \\
+            \vec{V}^2 &= 5 && \text{Solve for } \vec{V}^2 \text{.}
+        \end{align}
+        \\
+        The net vector is 15, \SI{0}{\degree}.
+        \\
+    \end{enumerate}
+    \item A gorilla pulls straight downwards with a force of \SI{1000.0}{N} on a \SI{100.0}{g} apple. What is the net force on the apple?
+    \begin{enumerate}
+        \item Evaluate for the force of gravity.
+            \begin{align}
+                F &= mg && \text{From F=ma, substituting g for a.} \\
+                F &= \SI{0.98}{N} && \text{Substitute and evaluate}
+            \end{align}
+        \item Add the magnitudes of the forces.
+            \begin{align}
+                F_{\text{net}} &= \SI{0.98}{N} + \SI{1000.0}{N} && \text{Add the forces.} \\
+                F_{\text{net}} &= \SI{1001.0}{N} && \text{Evaluate.}
+            \end{align}
+        \hfill
+        \\
+        The net force exerted on the apple is \SI{1001.0}{N}.
+        \\    
+    \end{enumerate}
+    \item A \SI{2000.0}{kg} car accelerates at \SI{11.5}{\meter\per\second\squared}. If the coefficient of friction acting on the car is roughly 0.1, how much force does the engine exert?
+            \begin{enumerate}
+                \item Solve for the normal force.
+                    \begin{align}
+                        F_N &= F_g && \\
+                        F_N &= mg && \text{Substitute.} \\
+                        F_N &= \SI{2000.0}{kg} \cdot g && \text{Substitute.} \\ 
+                        F_N &= \SI{19613}{N} && \text{Evaluate.}
+                    \end{align}
+                \item Solve for the force of friction.
+                    \begin{align}
+                        F_f &= \mu F_N && \\
+                        F_f &= 0.1 \cdot \SI{19613}{N} && \text{Substitute.} \\
+                        F_f &= \SI{1961.3}{N} && \text{Evaluate.}
+                    \end{align}
+                \item Solve for the applied force.
+                    \begin{align}
+                        F_{\text{net}} = F_a - F_f &= ma && \\
+                        F_a - \SI{1961.3}{N} &= \SI{2000.0}{kg} \cdot \SI{11.5}{\frac{m}{s^2}} && \text{Substitute.} \\
+                        F_a &= \SI{24900}{N} && \text{Solve for } F_a \text{.}
+                    \end{align}
+                \hfill
+                    \\
+                    The net force exerted by the engine is \SI{24900}{N}.
+                    \\ 
+            \end{enumerate}
+\end{enumerate}
+
+\section*{Standard problems}
+\begin{enumerate}
+    \item How much force does a railgun exert on a \SI{25.0}{kg} projectile as it accelerates from rest to \SI{3500.0}{\meter\per\second} in the \SI{10.0}{m} long rails? 
+    \begin{enumerate}
+        \item Solve for acceleration.
+                \begin{align}
+                    v^2                         &= v_0^2 + 2ad && \text{From kinematics.} \\
+                    (\SI{3500}{\frac{m}{s}})^2  &= (\SI{0}{\frac{m}{s}})^2 + 2 \cdot a \cdot \SI{10.0}{m} && \text{Substitute.} \\
+                    a                           &= \SI{6.12e5}{\frac{m}{s^2}} && \text{Solve for acceleration.}
+                \end{align}
+                
+        \item Substitute into $F=ma$ for force.
+            \begin{align}
+                F &= ma && \text{From Newton's second law.} \\
+                F &= \SI{25.0}{kg} \cdot \SI{6.12e5}{\frac{m}{s^2}} && \text{Substitute.} \\
+                F &= \SI{1.53e7}{N} && \text{Evaluate.}
+            \end{align}
+    \hfill
+    \\
+    The force exerted on the projectile is \SI{1.53e7}{N}.
+    \\    
+    \end{enumerate}
+    \item A \SI{7.29}{kg} bowling ball is kicked simultaneously by two bowlers. When looking at the situation from top-down, the first bowler kicks it with \SI{100.0}{N} of force north, and the second bowler kicks it with \SI{78.56}{N} of force west.
+        \begin{enumerate}
+            \item What is the force on the ball?
+                \begin{enumerate}
+                    \item Solve for the magnitude of the force.
+                    \begin{align}
+                        c^2 &= a^2 + b^2 && \text{Use the Pythagorean theorem.} \\
+                        c^2 &= (\SI{78.56}{N})^2 + (\SI{100.0}{N})^2 && \text{Substitute.} \\
+                        c   &= \SI{127.2}{N} && \text{Solve for c.}
+                    \end{align}
+                    \item Solve for the direction of the force.
+                    \begin{align}
+                        \theta &= \arctan (\frac{78.56}{100.0}) && \text{Use the inverse tangent function.} \\
+                        \theta &= \SI{38.15}{\degree} && \text{Evaluate for } \theta \text{.}
+                    \end{align}
+                \end{enumerate}
+                    \hfill
+                    \\
+                    The force on the ball is \SI{127.2}{N} \SI{38.15}{\degree} west of north. \\
+            \item What is the ball's acceleration?
+                \begin{enumerate}
+                    \item Substitute into $F=ma$ for acceleration.
+                    \begin{align}
+                        F &= ma && \text{From Newton's second law.} \\
+                        \SI{127.2}{N} &= \SI{7.29}{kg} \cdot a && \text{Substitute.} \\
+                        a &= \SI{17.44}{\frac{m}{s^2}} && \text{Solve for acceleration.}
+                    \end{align}
+                \end{enumerate}
+                \hfill
+                    \\
+                    The acceleration of the ball is \SI{17.44}{\meter\per\second\squared} \SI{38.15}{\degree} west of north. \\
+        \end{enumerate}
+    \item A \SI{34.8}{kg} medium-sized furry animal is sliding down a friction-less \SI{1}{\degree} inclined plane. What is its acceleration?
+        \begin{enumerate}
+            \item Solve for the force of the animal due to gravity.
+                \begin{align}
+                    F &= mg && \text{From F=ma, substituting g for a.} \\
+                    F &= \SI{34.8}{kg} \cdot g && \text{Substitute.} \\
+                    F &= \SI{341}{N} && \text{Evaluate.}
+                \end{align}
+            \item Solve for the force in the $x$ direction..
+                \begin{align}
+                    F &= \SI{341}{N} \cdot \sin(\SI{1}{\degree}) && \text{Substitute.} \\
+                    F &= \SI{5.95}{N} && \text{Evaluate.}
+                \end{align}
+            \item Solve for the acceleration.
+                \begin{align}
+                    F &= ma && \\
+                    \SI{5.95}{N} &= \SI{34.8}{kg} \cdot a && \text{Substitute.} \\
+                    a &= \SI{0.171}{\frac{N}{kg}} && \text{Evaluate.}
+                \end{align}
+                \hfill
+                    \\
+                    The acceleration of the furry animal is \SI{0.171}{\newton\per\kilogram} in the $x$ direction. \\
+        \end{enumerate}
+        
+        \item A \SI{2.00}{kg} small furry animal is on a friction-less table. Attached to it on a pulley and dangling off the table is a \SI{999.99}{kg} anvil. What is the acceleration of the animal?
+        \begin{enumerate}
+            \item Solve for the force of the anvil due to gravity.
+                \begin{align}
+                    F_g &= mg && \text{From F=ma, substituting g for a.} \\
+                    F &= \SI{999.99}{kg} \cdot g && \text{Substitute.} \\
+                    F &= \SI{9806.6}{N} && \text{Evaluate.}
+                \end{align}
+            \item Solve for the force applied to the \SI{2.00}{kg} small furry animal.
+                \begin{align}
+                    \SI{9806.6}{N} &= (\SI{2.00}{kg} + \SI{999.99}{kg}) \cdot && \text{Substitute from F=ma.} \\
+                    F &= \SI{5.95}{N} && \text{Evaluate.}
+                \end{align}
+            \item Solve for the acceleration.
+                \begin{align}
+                    F &= ma && \\
+                    \SI{5.95}{N} &= \SI{34.8}{kg} \cdot a && \text{Substitute.} \\
+                    a &= \SI{0.171}{\frac{N}{kg}} && \text{Evaluate.}
+                \end{align}
+                \hfill
+                    \\
+                    The acceleration of the furry animal is \SI{0.171}{\newton\per\kilogram} in the $x$ direction. \\
+        \end{enumerate}
+        
+        
+        \item Two rabbits are tied together with a string. There is a friction-less right triangular ramp. One rabbit is dangling from a pulley, the other situated on the triangular ramp. The pulley is attached to the top vertex of the triangle. \\
+        The triangle's angles are as follows: 90\degree, 30\degree, which are situated on the ground, and 60\degree. The rabbits both weigh \SI{1500.0}{kg}. What is the acceleration of the dangling rabbit?
+        \begin{enumerate}
+            \item Find the force due to gravity of the dangling rabbit.
+                \begin{align}
+                    F &= mg \\
+                    F &= \SI{1500.0}{kg} \cdot g \\
+                    F &= \SI{14709}{N}
+                \end{align}
+                
+            \item Find the force due to gravity in the $x$ direction of the rabbit on the ramp.
+                \begin{align}
+                    F &= mg \cdot \sin(\SI{30}{\degree}) \\
+                    F &= \SI{1500.0}{kg} \cdot g \cdot \sin(\SI{30}{\degree}) \\
+                    F &= \SI{7355.0}{N}
+                \end{align}
+                
+            \item Find the acceleration of the system of rabbits.
+                \begin{align}
+                    F &= ma \\
+                    \SI{7355.0}{N} &= \SI{3000.0}{kg} \cdot a && \text{} \\
+                    a &= \SI{2.452}{\frac{N}{kg}}
+                \end{align}
+            The acceleration of the dangling rabbit is \SI{2.452}{\newton\per\kilogram}.
+        \end{enumerate}
+\end{enumerate}
+\section*{"Challenging" questions}
+\begin{enumerate}
+    \item When a \SI{500.0}{kg} hamster is sliding down a friction-less ramp, it takes \SI{400.0}{N} of force directed up the ramp to keep its velocity constant. Calculate the angle of the incline.
+    
+    \begin{enumerate}
+        \item Write an expression equating the forces.
+            \begin{align}
+                F_{gx} &= F_A && \\
+                \sin(\theta) \cdot \SI{500.0}{kg} \cdot g &= \SI{400.0}{N} && \text{Substitute.} \\
+                \theta &= \SI{4.68}{\degree} && \text{Solve for theta.}
+            \end{align}
+            \hfill
+                    \\
+                    The angle is \SI{4.68}{\degree}. \\
+    \end{enumerate}
+    
+    \item When that same hamster is being sliding down a new, frictioned ramp, it takes \SI{600.0}{N} to keep its velocity constant. When it is pushed up, it takes \SI{1819.73}{N} to keep the velocity constant. What is the new angle and coefficient of friction?
+    \begin{enumerate}
+        \item Write an expression equating the forces when sliding down.
+        \begin{align}
+                F_{gx} &= F_A + F_f && \\
+                \sin(\theta) \cdot \SI{500.0}{kg} \cdot g &= \SI{600.0}{N} + F_f && \text{Substitute.} \\
+                F_f &= F_{gx} - \SI{600.0}{N} && \text{Solve for } F_f \text{.}
+            \end{align}
+            
+        \item Write an expression equating the forces when pushed up.
+        \begin{align}
+            \SI{1819.73}{N} &= F_f + F_{gx} && \\
+                \SI{1819.73}{N} &= 2F_{gx} + \SI{600.0}{N} && \text{Substitute.} \\
+                F_{gx} &= \SI{1210.}{N} && \text{Solve for } F_{gx} \text{.}
+        \end{align}
+        \item Solve for the angle.
+        \begin{align}
+            F_{gx} &= \sin(\theta) \cdot \SI{500.0}{kg} \cdot g \\
+            \SI{1210.}{N} &= \sin(\theta) \cdot \SI{500.0}{kg} \cdot g && \text{Substitute.} \\
+            \theta &= \SI{14.30}{\degree} && \text{Solve for } \theta \text{.}
+        \end{align}
+        \item Solve for the coefficient of friction.
+        \begin{align}
+            F_f &= \mu F_N && \\
+            F_{gx} - \SI{600.0}{N} &= \mu \cdot \cos(\theta) \cdot \SI{500.0}{kg} \cdot g && \text{Substitute.} \\
+            \SI{609.8}{N} &= \mu \cdot \cos(\SI{14.30}{\degree}) \cdot \SI{500.0}{kg} \cdot g && \text{Further substitute.} \\
+            \mu &= 0.128 && \text{Solve for } \mu \text{.}
+        \end{align}
+        The new angle is \SI{14.30}{\degree} and the coefficient of friction is 0.128.
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Conceptual questions}
+\begin{enumerate}
+    \item What is the $\int_{a}^{b} F(x) dx$? \\
+        Work.
+    \item Is the acceleration of a free falling object proportional to its mass? \\
+    No. In a gravitational field with a large enough difference between $m_1$ and $m_2$, the acceleration of a free falling object is the same regardless of the mass of the falling object.
+    \item Does a constant net force result in a constant velocity? \\
+    No. At not-close-to-light speeds, constant net force results in a constant acceleration, as acceleration is proportional to force.
+    \item Would a graph of acceleration with respect to mass be concave up, down, or $\frac{d^2a}{dm^2} = 0$? \\
+    As a is inversely proportional to mass ceteris paribus, $\frac{d}{dm} \frac{F}{m} = \frac{-F}{m^2}$. $\frac{d^2}{dm^2} \frac{F}{m} = \frac{2F}{m^3}$. Therefore, if force is positive and mass is positive, such a graph must be concave up.
+\end{enumerate}
+\end{document}
